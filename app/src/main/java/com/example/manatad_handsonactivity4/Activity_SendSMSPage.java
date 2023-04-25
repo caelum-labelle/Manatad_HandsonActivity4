@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 public class Activity_SendSMSPage extends AppCompatActivity {
     Button btnSend;
+
+    Button btnClear;
     EditText txtPhoneNumber;
     EditText txtMessage;
     String phoneNo;
@@ -22,6 +24,7 @@ public class Activity_SendSMSPage extends AppCompatActivity {
         setContentView(R.layout.activity_sendsmspage);
 
         btnSend = findViewById(R.id.btnSend);
+        btnClear = findViewById(R.id.btnClear);
         txtPhoneNumber = findViewById(R.id.txtPhoneNumber);
         txtMessage = findViewById(R.id.txtMessage);
 
@@ -38,5 +41,12 @@ public class Activity_SendSMSPage extends AppCompatActivity {
             }
         });
 
+        btnClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                txtPhoneNumber.setText("");
+                txtMessage.setText("");
+            }
+        });
     }
 }
